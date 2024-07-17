@@ -1,15 +1,20 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import React, { useContext } from "react";
 import StudentItem from "./StudentItem";
+import { UserContext } from "./../context/userContext";
 
 const StudentList = () => {
+  const { students, removeStudent, updateStudent } = useContext(UserContext);
+
   return (
     <div className="">
-      {/* {students.map((student) => (
-        <div className="">
-          <StudentItem key={student.id} student={student} />
-        </div>
-      ))} */}
+      {students.map((student) => (
+        <StudentItem
+          key={student.id}
+          student={student}
+          onDelete={removeStudent}
+          onUpdate={updateStudent}
+        />
+      ))}
     </div>
   );
 };

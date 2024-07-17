@@ -12,10 +12,10 @@ const StudentInput = () => {
     setFirstName("");
     setLastName("");
   };
+
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check localStorage for dark mode state
     const savedDarkMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedDarkMode);
     if (savedDarkMode) {
@@ -31,7 +31,7 @@ const StudentInput = () => {
   };
 
   return (
-    <div className="">
+    <div style={{ marginLeft: "10px" }}>
       <form onSubmit={handleSubmit} className="d-flex align-items-center">
         <p className="pt-3 pe-2">#</p>
         <input
@@ -43,7 +43,7 @@ const StudentInput = () => {
         />
         <input
           type="text"
-          className="w540 ml10 col form-control"
+          className="w540 ml-2 col form-control"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           placeholder="Last Name"
@@ -66,12 +66,7 @@ const StudentInput = () => {
               height="24"
               viewBox="0 0 24 24"
               className="img"
-              style={{
-                fill: "white",
-                transform: "rotate(180deg)",
-                msFilter:
-                  "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)",
-              }}>
+              style={{ fill: "white", transform: "rotate(180deg)" }}>
               <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
             </svg>
           ) : (
