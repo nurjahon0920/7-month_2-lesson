@@ -1,8 +1,17 @@
-import { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
-const UserProvider = UserContext.Provider;
-const UserConsumer = UserContext.Consumer;
+export const UserProvider = ({ children }) => {
+  const [students, setStudents] = useState([]);
 
-export { UserProvider, UserConsumer };
+  const addStudent = (student) => {
+    setStudents([...students, student]);
+  };
+
+  return (
+    <UserContext.Provider value={{ students, addStudent }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
