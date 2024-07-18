@@ -40,6 +40,7 @@ const StudentInput = () => {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           placeholder="First Name"
+          required
         />
         <input
           type="text"
@@ -47,6 +48,7 @@ const StudentInput = () => {
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           placeholder="Last Name"
+          required
         />
         <button type="submit" className="ml-2 btn btn-primary ms-2">
           Add
